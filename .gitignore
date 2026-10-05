@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+.pytest_cache/
+.streamlit/secrets.toml
+data/*.csv
+data/*.zip
+data/raw/
+artifacts/*.joblib
+artifacts/*.pkl
+*.log
