@@ -290,11 +290,11 @@ footer {
 @st.cache_resource
 def load_model():
     if not MODEL_PATH.exists():
-        return None
+        raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
     try:
         return FraudModel().load(MODEL_PATH)
-    except Exception:
-        return None
+    except Exception as e:
+        raise RuntimeError(f"Model loading failed: {type(e).__name__}: {e}") from e
 
 
 @st.cache_data
